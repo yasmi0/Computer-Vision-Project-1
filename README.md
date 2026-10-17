@@ -46,7 +46,6 @@ Pada grafik hasil eksperimen, terlihat bahwa metrik `mAP50` dan `Recall` sangat 
 3.  **Bukan Overfitting:** Berdasarkan kurva *loss* pada `results.png`, tidak ditemukan indikasi *overfitting*. Hal ini dibuktikan dengan nilai `val_loss` (validation loss) yang terus menurun konsisten hingga epoch ke-75 (misalnya `val/box_loss` mencapai 0.207), sementara nilai `mAP50-95` terus meningkat mencapai puncaknya di 0.995. Jika model mengalami *overfitting*, grafik `val_loss` akan membentuk huruf "U" (turun lalu naik tajam di akhir), yang mana hal ini tidak terjadi pada model kita.
 
 **Kesimpulan:** 
-
 Ultralytics secara otomatis menyimpan bobot terbaik (`best.pt`) pada epoch di mana `mAP50-95` mencapai titik tertinggi. Oleh karena itu, model yang diuji pada data test adalah model versi paling optimal, membuktikan bahwa model berhasil melakukan generalisasi dengan sangat baik.
 
 ## 5. Cara Menjalankan Program
