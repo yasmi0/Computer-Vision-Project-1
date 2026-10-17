@@ -51,5 +51,5 @@ Ultralytics secara otomatis menyimpan bobot terbaik (`best.pt`) pada epoch di ma
 ## 5. Cara Menjalankan Program
 1. Install library: `pip install ultralytics opencv-python`
 2. Jalankan pengecekan anotasi: `python program/01_cek_anotasi.py dataset_yolo`
-3. Jalankan pembagian dataset: `python program/05_split_dataset_yolo.py`
-4. Jalankan pelatihan: `python program/06_latih_bandingkan.py --nim 4222401040 --nama "Zahkiatul Yasmi" --model yolo26n`
+3. Jalankan pembagian dataset: `python program/03_split_dataset_yolo.py`
+4. Jalankan pelatihan: `python program/04_latih_bandingkan.py --nim 4222401040 --nama "Zahkiatul Yasmi" --model yolo26n`
