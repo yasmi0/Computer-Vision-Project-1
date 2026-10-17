@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Landing_Pad']
+
+roboflow:
+  workspace: kias-workspace-7zqii
+  project: deep-learning-jhrol
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/kias-workspace-7zqii/deep-learning-jhrol/1

@@ -1,0 +1,6 @@
+path: C:/Users/ASUS/Documents/Semester 2-8/Semester 5/Computer Vision and Deep Learning (RET503)/Project_1/dataset_v1
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: landing_path
