@@ -7,10 +7,9 @@ import cv2
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else "dataset_yolo")
 if not (ROOT / "classes.txt").exists():
     sys.exit(f"Folder '{ROOT}' atau file '{ROOT / 'classes.txt'}' belum ada.\n"
-             "Siapkan dataset dulu: ekspor dari CVAT, atau jalankan 00_siapkan_dari_roboflow.py /\n"
-             "00_siapkan_dari_voc.py untuk dataset publik (misalnya dataset jalan berlubang).")
+             "Siapkan dataset dulu: install dari link Google Drive kemudian jalankan 00_dataset.py.")
 KELAS = [k.strip() for k in (ROOT / "classes.txt").read_text(encoding="utf-8").splitlines() if k.strip()]
-MIN_SISI_PX = 8          # kotak lebih kecil dari ini patut dicurigai
+MIN_SISI_PX = 8         
 WARNA = [(0, 200, 0), (0, 140, 255), (255, 80, 0), (200, 0, 200), (0, 200, 200)]
 
 gambar = sorted(p for p in (ROOT / "images").iterdir() if p.suffix.lower() in (".jpg", ".jpeg", ".png"))
@@ -29,7 +28,7 @@ for img_path in gambar:
         continue
     baris = [b for b in lbl.read_text().splitlines() if b.strip()]
     if not baris:
-        kosong += 1                      # boleh: gambar latar tanpa objek
+        kosong += 1                      
     for i, b in enumerate(baris, 1):
         v = b.split()
         if len(v) != 5:
