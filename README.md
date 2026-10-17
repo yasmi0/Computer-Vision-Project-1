@@ -63,7 +63,13 @@ Ultralytics secara otomatis menyimpan bobot terbaik pada `best.pt`, yaitu epoch 
 Secara ringkas, E1 dan E3 sama-sama mencapai performa validasi yang sangat tinggi. Namun, E3 dengan `imgsz=640` tidak memberikan peningkatan akurasi yang sepadan dengan biaya komputasi yang dikeluarkan. E3 membutuhkan waktu pelatihan sekitar 6,7 kali lebih lama dan inferensi sekitar 1,9 kali lebih lambat dibandingkan E1. Selain itu, kurva mAP50-95 E3 lebih fluktuatif dan sempat mengalami *drop* di awal epoch akibat penyesuaian resolusi. Oleh karena itu, E1 dipilih sebagai model terbaik karena lebih efisien, lebih stabil, dan tetap mampu melakukan generalisasi dengan sangat baik pada data test, dibuktikan dengan mAP50 sebesar 0,995 dan mAP50-95 sebesar 0,948.
 
 ## 5. Cara Menjalankan Program
-1. Install library: `pip install ultralytics opencv-python`
-2. Jalankan pengecekan anotasi: `python program/01_cek_anotasi.py dataset_yolo`
-3. Jalankan pembagian dataset: `python program/03_split_dataset_yolo.py`
-4. Jalankan pelatihan: `python program/04_latih_bandingkan.py --nim 4222401040 --nama "Zahkiatul Yasmi" --model yolo26n`
+1. Install library yang dibutuhkan:
+   `pip install ultralytics opencv-python`
+2. Gabungkan dataset hasil ekspor Roboflow ke dalam satu folder (flatten):
+   `python program/00_dataset.py`
+3. Jalankan pengecekan kualitas dan visual anotasi:
+   `python program/01_cek_anotasi.py dataset_yolo`
+4. Bagi dataset menjadi data Train, Validation, dan Test (70/20/10):
+   `python program/03_split_dataset_yolo.py dataset_yolo dataset_v1`
+5. Jalankan pelatihan dan evaluasi model (Eksperimen E1 dan E3):
+   `python program/04_latih_bandingkan.py --nim 4222401040 --nama "Zahkiatul Yasmi" --model yolo26n`
