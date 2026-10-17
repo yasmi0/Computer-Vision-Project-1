@@ -22,7 +22,6 @@ p.add_argument("--device", default=None, help="0 untuk GPU pertama, cpu untuk CP
 p.add_argument("--ubah", default="imgsz=640", help="SATU perubahan untuk E3, format kunci=nilai")
 args = p.parse_args()
 
-# --- Satu perubahan untuk eksperimen tuning (E3) ---
 kunci, nilai = args.ubah.split("=", 1)
 try:
     nilai = int(nilai)
@@ -30,11 +29,11 @@ except ValueError:
     try:
         nilai = float(nilai)
     except ValueError:
-        pass                                   # biarkan sebagai teks, misal optimizer=SGD
+        pass                                 
 
 DATA = Path(args.data)
 if not DATA.exists():
-    raise SystemExit(f"{DATA} tidak ditemukan. Jalankan dulu 05_split_dataset_yolo.py.")
+    raise SystemExit(f"{DATA} tidak ditemukan. Jalankan dulu 03_split_dataset_yolo.py.")
 PROJECT = Path("hasil_praktik").resolve()
 
 
@@ -71,7 +70,6 @@ def latih(nama, model_file, pretrained, **ubah):
 
 hasil = [
     latih("E1_pretrained", f"{args.model}.pt", True),
-    # latih("E2_scratch", f"{args.model}.yaml", False), # Dinonaktifkan karena RPS hanya minta E1 & E3
     latih("E3_tuning", f"{args.model}.pt", True, **{kunci: nilai}),
 ]
 
