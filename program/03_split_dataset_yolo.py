@@ -6,7 +6,7 @@ from pathlib import Path
 SRC = Path(sys.argv[1] if len(sys.argv) > 1 else "dataset_yolo")
 DST = Path(sys.argv[2] if len(sys.argv) > 2 else "dataset_v1")
 PROPORSI = {"train": 0.7, "val": 0.2, "test": 0.1}
-random.seed(42)                      # pembagian bisa diulang dengan hasil sama
+random.seed(42)                      
 
 kelas = [k.strip() for k in (SRC / "classes.txt").read_text().splitlines() if k.strip()]
 gambar = sorted(p for p in (SRC / "images").iterdir() if p.suffix.lower() in (".jpg", ".jpeg", ".png"))
