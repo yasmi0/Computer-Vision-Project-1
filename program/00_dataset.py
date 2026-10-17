@@ -16,9 +16,7 @@ if not FOLDER_ROBOFLOW.exists():
 
 jumlah_gambar = 0
 
-# Pencarian otomatis untuk semua folder bernama 'images'
 for folder_gambar in FOLDER_ROBOFLOW.rglob("images"):
-    # Cari folder 'labels' yang sejajar dengan folder 'images'
     folder_label = folder_gambar.parent / "labels"
     
     if folder_gambar.is_dir() and folder_label.exists():
@@ -37,4 +35,4 @@ for folder_gambar in FOLDER_ROBOFLOW.rglob("images"):
 print(f"\nSelesai! Berhasil menggabungkan {jumlah_gambar} gambar ke dalam folder '{OUT}'")
 
 if jumlah_gambar == 0:
-    print("PERINGATAN: 0 gambar ditemukan. Pastikan file ZIP dari Roboflow sudah di-EKSTRAK (di-unzip) ke dalam folder 'dataset', bukan masih berbentuk file .zip.")
+    print("PERINGATAN: 0 gambar ditemukan. Pastikan file dataset_roboflow sudah ada.")
