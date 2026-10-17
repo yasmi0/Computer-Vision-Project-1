@@ -5,7 +5,7 @@
 **Mata Kuliah:** Computer Vision and Deep Learning (RET503)
 
 ## 1. Deskripsi Proyek
-Proyek ini bertujuan untuk mendeteksi objek "path landing" (landasan pendaratan) menggunakan algoritma YOLO. Dataset terdiri dari foto lapangan yang memiliki path landing dan tanpa path landing (background). Dataset telah dianotasi menggunakan Roboflow dan diekspor dalam format YOLO.
+Proyek ini bertujuan untuk mendeteksi objek landing path (landasan pendaratan) yang digunakan untuk PBL drone fixed-wing dengan menggunakan algoritma YOLO. Dataset terdiri dari foto lapangan yang memiliki path landing dan tanpa path landing (background). Dataset telah dianotasi menggunakan Roboflow dan diekspor dalam format YOLO.
 
 *   **Jumlah Kelas:** 1 (`landing_path`)
 *   **Link Dataset:** [Google Drive Dataset](https://drive.google.com/drive/folders/1Yt304TzYQOO1anPIL8j070CVePjdHtKd?usp=sharing)
