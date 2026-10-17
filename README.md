@@ -4,19 +4,18 @@
 **NIM:** 4222401040
 **Mata Kuliah:** Computer Vision and Deep Learning (RET503)
 
-## 1. Deskripsi Proyek (Tahap 1-2)
+## 1. Deskripsi Proyek 
 Proyek ini bertujuan untuk mendeteksi objek "path landing" (landasan pendaratan) menggunakan algoritma YOLO. Dataset terdiri dari foto lapangan yang memiliki path landing dan tanpa path landing (background). Dataset telah dianotasi menggunakan Roboflow dan diekspor dalam format YOLO.
 *   **Jumlah Kelas:** 1 (`landing_path`)
-*   **Link Dataset:** [Masukkan link Roboflow atau Google Drive di sini]
+*   **Link Dataset:** https://drive.google.com/drive/folders/1Yt304TzYQOO1anPIL8j070CVePjdHtKd?usp=sharing
 
-## 2. Metodologi Eksperimen (Tahap 3)
+## 2. Metodologi Eksperimen 
 Eksperimen dilakukan menggunakan model `yolo26n` dengan dua skenario:
 *   **E1 (Pretrained):** Baseline menggunakan bobot awal (Transfer Learning) dengan resolusi `imgsz=416`.
 *   **E3 (Tuning):** Eksperimen tuning dengan mengubah resolusi gambar menjadi `imgsz=640`.
 
 ## 3. Hasil Eksperimen
 Tabel perbandingan hasil evaluasi pada data validasi:
-*(Salin tabel dari terminal output E1 vs E3 ke sini)*
 
 **Grafik E1:**
 ![Hasil E1](hasil_praktik/E1_pretrained/results.png)
@@ -24,8 +23,7 @@ Tabel perbandingan hasil evaluasi pada data validasi:
 **Grafik E3:**
 ![Hasil E3](hasil_praktik/E3_tuning/results.png)
 
-## 4. Analisis dan Hasil Test (Tahap 4-6)
-*(Copy-paste analisis yang sudah kita buat sebelumnya ke sini)*
+## 4. Analisis dan Hasil Test
 
 **A. Pemilihan Model Terbaik**
 Meskipun eksperimen E1 dan E3 sama-sama mencapai performa luar biasa pada data validasi dengan `mAP50-95` sebesar 0.995 dan `Recall` 100%, **E1 terpilih sebagai model terbaik**. Hal ini karena E1 jauh lebih efisien dari segi waktu (15.4 menit vs 103.9 menit pada E3) dan kecepatan inferensi (42.3 ms vs 78.8 ms). 
